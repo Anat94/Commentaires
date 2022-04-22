@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Commentaires</title>
+        <link rel="stylesheet" href="/assets/semantic/semantic.min.css">
+        <style>
+            .main.container{
+                margin-top: 7em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ui fixed inverted menu">
+            <a href="/" class="header item">Accueil</a>
+        </div>
+        <div class="ui main container">
+            <% if (locals.flash && locals.flash.error) { %>
+            <div class="ui negative message">
+                <%= flash.error %>
+            </div>
+            <% } %>
+            <% if (locals.flash && locals.flash.succes) { %>
+                <div class="ui positive message">
+                    <%= flash.succes %>
+                </div>
+            <% } %>

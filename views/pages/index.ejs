@@ -1,0 +1,31 @@
+<%- include('header') %>
+<form method="post" action="/" class="ui form">
+    <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message"></textarea>
+    </div>
+    <button type="submit" class="ui blue labeled submit icon button">
+        <i class="icon edit"></i>Envoyer
+    </button>
+</form>
+
+<div class="ui comments">
+    <h3 class="ui dividing header"> Commentaires</h3>
+    <% for (message of messages) { %>
+        <div class="comment">
+            <a class="avatar">
+                <img src ="https://thumbs.dreamstime.com/b/vecteur-d-ic%C3%B4ne-de-profil-avatar-par-d%C3%A9faut-photo-sociale-inconnue-utilisateur-m%C3%A9dias-l-184816085.jpg">
+            </a>
+            <div class="content">
+                <div class="metadata">
+                    <div class="date">
+                        <%= message.date.fromNow() %>
+                    </div>
+                </div>
+                <div class="test"> <%= message.content %> </div>
+            </div>
+        </div>
+    <% } %>
+</div>
+
+<%- include('footer') %>
